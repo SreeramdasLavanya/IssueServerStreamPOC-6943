@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc";
+option java_outer_classname = "StreamExampleProto";
+
+package streamexample;
+
+// Define the request message
+message Request {
+  string query = 1;
+}
+
+// Define the response message that will be streamed
+message Response {
+  string result = 1;
+}
+
+// Define the service with a server streaming RPC
+service ExampleService {
+  rpc StreamResults(Request) returns (stream Response);
+}
