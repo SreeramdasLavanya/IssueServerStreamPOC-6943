@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "com.ServerStreamMaxAge";
+option java_outer_classname = "ServerStreamMaxAge";
+
+service TestServerStreamMaxAge {
+  rpc StreamData(Empty) returns (stream Response);
+}
+
+message Empty {}
+
+message Response {
+  string message = 1;
+}
