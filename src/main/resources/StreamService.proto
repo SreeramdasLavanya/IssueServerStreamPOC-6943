@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.StreamService";
+
+package example;
+
+service StreamService {
+  rpc streamData (StreamRequest) returns (stream StreamResponse);
+}
+
+message StreamRequest {
+  string request_id = 1;
+}
+
+message StreamResponse {
+  string message = 1;
+}
